@@ -36,3 +36,8 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/shop-shop', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
