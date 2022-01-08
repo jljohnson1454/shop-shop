@@ -37,7 +37,3 @@ db.once('open', () => {
   });
 });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/shop-shop', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
