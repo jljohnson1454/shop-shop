@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Schedule } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -150,6 +150,15 @@ db.once('open', async () => {
   });
 
   console.log('users seeded');
+
+
+  await Schedule.create({
+    text: 'Kanye West',
+    starDate: '7am',
+    endDate: '10pm'
+  });
+
+  console.log('dates added');
 
   process.exit();
 });
